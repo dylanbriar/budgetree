@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 
 function serverTest (){
-  fetch(`http://budgetree-server-27ca7f33b135.herokuapp.com/`)
+  fetch(`https://budgetree-server-27ca7f33b135.herokuapp.com/`)
   .then(data => data.json())
   .then(data => console.log(data))
 }
