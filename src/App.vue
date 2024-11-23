@@ -19,7 +19,7 @@ function serverTest (){
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <button @click="serverTest()"></button>
+        <button @click="serverTest()">heehee forgot text</button>
       </nav>
     </div>
   </header>
@@ -31,6 +31,10 @@ function serverTest (){
 header {
   line-height: 1.5;
   max-height: 100vh;
+}
+
+button {
+
 }
 
 .logo {
