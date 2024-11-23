@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+function serverTest (){
+  fetch(`https://budgetree-server-27ca7f33b135.herokuapp.com/`)
+  .then(data => data.json())
+  .then(data => console.log(data))
+}
 </script>
 
 <template>
@@ -13,6 +19,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <button @click="serverTest()"></button>
       </nav>
     </div>
   </header>
