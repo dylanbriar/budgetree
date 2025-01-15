@@ -17,27 +17,36 @@ function submitNewTotal (enteredTotal: number) {
 
 <template>
   <div class="total-container">
-    <span class="total-label">Current Total: ${{ account.total }}</span>
-    <div class="total-controls">
-      <div class="arrow-buttons">
-        <button @click="account.increment" class="increment">+</button>
-        <button @click="account.decrement" class="decrement">-</button>
+    <div class="total-current">
+      <span class="total-label">Current Total: ${{ account.total }}</span>
+      <div class="total-controls">
+        <div class="arrow-buttons">
+          <button @click="account.increment" class="increment">+</button>
+          <button @click="account.decrement" class="decrement">-</button>
+        </div>
       </div>
+      <br>
+      <form v-if="wantsToChange" @submit.prevent="submitNewTotal(enteredTotal)">
+        <input type="number" placeholder="Edit Total" v-model="enteredTotal">
+      </form>
+      <button v-if="wantsToChange" @click="showTotalForm">Cancel</button>
     </div>
-    <br>
-    <form v-if="wantsToChange" @submit.prevent="submitNewTotal(enteredTotal)">
-      <input type="number" placeholder="Edit Total" v-model="enteredTotal">
-    </form>
-    <button v-if="wantsToChange" @click="showTotalForm">Cancel</button>
-  </div>
-  <div id="updateTotal">
-    <button v-if="!wantsToChange" @click="showTotalForm">Update Total?</button>
+    <div id="updateTotal">
+      <button v-if="!wantsToChange" @click="showTotalForm">Update Total?</button>
+    </div>
   </div>
 </template>
 
 <style scoped>
 
 .total-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1%;
+}
+
+.total-current {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,6 +98,7 @@ function submitNewTotal (enteredTotal: number) {
 #updateTotal {
   display: flex;
   justify-content: center;
+  padding-left: 1%;
 }
 
 @media (min-width: 1024px) {

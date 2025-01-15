@@ -6,10 +6,12 @@ import { useTotalStore } from './stores/total';
 const account = useTotalStore();
 
 // function serverTest (){
-//   fetch(`https://budgetree-server-27ca7f33b135.herokuapp.com/`)
+  // fetch(`https://budgetree-server-27ca7f33b135.herokuapp.com/`)
+//   fetch('http://localhost:3000')
 //   .then(data => data.json())
 //   .then(data => console.log(data))
 // }
+
 </script>
 
 <template>
@@ -27,6 +29,7 @@ const account = useTotalStore();
       <RouterLink to="/">Why Budgetree</RouterLink>
       <RouterLink to="/">Settings</RouterLink>
     </nav>
+    <!-- <button @click="serverTest()">ServerTime</button> -->
   <RouterView />
 </template>
 
