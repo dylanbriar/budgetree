@@ -5,8 +5,8 @@ import { ref } from 'vue';
 const account = useTotalStore();
 
 //Total Editing
-let enteredTotal: number = 0;
-let wantsToChange = ref(false);
+const enteredTotal: number = 0;
+const wantsToChange = ref(false);
 function showTotalForm () {wantsToChange.value = !wantsToChange.value}
 function submitNewTotal (enteredTotal: number) {
   account.setTotal(enteredTotal);

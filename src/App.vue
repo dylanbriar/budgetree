@@ -25,7 +25,7 @@ const account = useTotalStore();
   </header>
     <nav>
       <RouterLink to="/breakdown">Budget Breakdown</RouterLink>
-      <RouterLink to="/">Income</RouterLink>
+      <RouterLink to="/login">LogIn for Now</RouterLink>
       <RouterLink to="/">Why Budgetree</RouterLink>
       <RouterLink to="/">Settings</RouterLink>
     </nav>
