@@ -5,12 +5,17 @@ import { useTotalStore } from './stores/total';
 
 const account = useTotalStore();
 
-// function serverTest (){
+function serverTest (){
   // fetch(`https://budgetree-server-27ca7f33b135.herokuapp.com/`)
-//   fetch('http://localhost:3000')
-//   .then(data => data.json())
-//   .then(data => console.log(data))
-// }
+  fetch('http://localhost:3000', {
+    method: "GET",
+    headers: {
+    "Content-Type": "application/json",
+    },
+  })
+  .then(data => data.json())
+  .then(data => console.log(data))
+}
 
 </script>
 
@@ -18,18 +23,11 @@ const account = useTotalStore();
   <!-- move this over to Home page, as the App will first show the log-in page -->
   <header>
     <div class="header-container">
-      <RouterLink to="/" id="goHome">BUDGETREE</RouterLink>
-      <span class="pronunciation">('bə-jə-trē)</span>
+      <RouterLink to="/" id="goHome">INVUETORY</RouterLink>
       <div class="total">${{ account.total }}</div>
     </div>
   </header>
-    <nav>
-      <RouterLink to="/breakdown">Budget Breakdown</RouterLink>
-      <RouterLink to="/login">LogIn for Now</RouterLink>
-      <RouterLink to="/">Why Budgetree</RouterLink>
-      <RouterLink to="/">Settings</RouterLink>
-    </nav>
-    <!-- <button @click="serverTest()">ServerTime</button> -->
+    <button @click="serverTest()">ServerTime</button>
   <RouterView />
 </template>
 
