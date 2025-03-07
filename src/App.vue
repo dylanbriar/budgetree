@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import { useTotalStore } from './stores/total';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/vue'
 // import { ref } from 'vue'
 
 const account = useTotalStore();
@@ -26,6 +27,12 @@ function serverTest (){
       <RouterLink to="/" id="goHome">INVUETORY</RouterLink>
       <div class="total">${{ account.total }}</div>
     </div>
+    <SignedOut>
+      <SignInButton />
+    </SignedOut>
+    <SignedIn>
+      <UserButton />
+    </SignedIn>
   </header>
     <button @click="serverTest()">ServerTime</button>
   <RouterView />
